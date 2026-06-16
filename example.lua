@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://github.com/asumi10/asumi/blob/main/main.lua"))()
+local library = loadstring(game:HttpGet("https://github.com/asumi10/asumi/blob/main/main.lua?raw=true"))()
 
 
 local window = library:init("Titlebar", true, Enum.KeyCode.RightShift, true)
