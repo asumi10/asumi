@@ -13,14 +13,13 @@ end
 
 function lib:init(ti, dosplash, visiblekey, deleteprevious)
     if syn then
-        
         cg = game:GetService("CoreGui")
         if cg:FindFirstChild("ScreenGui") and deleteprevious then
            tp(cg.ScreenGui.main, cg.ScreenGui.main.Position + UDim2.new(0,0,2,0), 0.5)
             game:GetService("Debris"):AddItem(cg.ScreenGui, 1)
-      end
+        end
 
-         -- main
+        -- main
         scrgui = Instance.new("ScreenGui")
         syn.protect_gui(scrgui)
         scrgui.Parent = game:GetService("CoreGui")
@@ -43,17 +42,13 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         scrgui.Parent = cg
     end
         
-    
-    
-    
-
     if dosplash then
         local splash = Instance.new("Frame")
         splash.Name = "splash"
         splash.Parent = scrgui
         splash.AnchorPoint = Vector2.new(0.5, 0.5)
-        splash.BackgroundColor3 = Color3.fromRGB(30, 31, 34) -- Koyu Kömür Grisi
-        splash.BackgroundTransparency = 0.600
+        splash.BackgroundColor3 = Color3.fromRGB(30, 31, 34) -- Koyu Arka Plan
+        splash.BackgroundTransparency = 0.200
         splash.Position = UDim2.new(0.5, 0, 2, 0)
         splash.Size = UDim2.new(0, 340, 0, 340)
         splash.Visible = true
@@ -67,7 +62,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         sicon.Name = "sicon"
         sicon.Parent = splash
         sicon.AnchorPoint = Vector2.new(0.5, 0.5)
-        sicon.BackgroundColor3 = Color3.fromRGB(25, 27, 31) -- Sol Kenar Çubuğu Tonu
+        sicon.BackgroundColor3 = Color3.fromRGB(25, 27, 31)
         sicon.BackgroundTransparency = 1
         sicon.Position = UDim2.new(0.5, 0, 0.5, 0)
         sicon.Size = UDim2.new(0, 191, 0, 190)
@@ -99,12 +94,11 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         game:GetService("Debris"):AddItem(splash, 1)
     end
         
-
     local main = Instance.new("Frame")
     main.Name = "main"
     main.Parent = scrgui
     main.AnchorPoint = Vector2.new(0.5, 0.5)
-    main.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- Sağ Ana İçerik Koyu Arka Planı
+    main.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- Ana Koyu Panel Arka Planı
     main.BackgroundTransparency = 0.150
     main.Position = UDim2.new(0.5, 0, 2, 0)
     main.Size = UDim2.new(0, 721, 0, 584)
@@ -152,11 +146,10 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     end)
 
     -- workarea right side setup
-
     local workarea = Instance.new("Frame")
     workarea.Name = "workarea"
     workarea.Parent = main
-    workarea.BackgroundColor3 = Color3.fromRGB(25, 27, 31) -- Sol Kenar Çubuğu ile Uyumlu Panel
+    workarea.BackgroundColor3 = Color3.fromRGB(25, 27, 31) -- Çalışma Alanı Koyu Renk
     workarea.Position = UDim2.new(0.36403501, 0, 0, 0)
     workarea.Size = UDim2.new(0, 458, 0, 584)
 
@@ -167,17 +160,15 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     local workareacornerhider = Instance.new("Frame")
     workareacornerhider.Name = "workareacornerhider"
     workareacornerhider.Parent = workarea
-    workareacornerhider.BackgroundColor3 = Color3.fromRGB(30, 31, 34)
+    workareacornerhider.BackgroundColor3 = Color3.fromRGB(25, 27, 31)
     workareacornerhider.BorderSizePixel = 0
     workareacornerhider.Size = UDim2.new(0, 18, 0.99895674, 0)
 
-
     -- searchbar
-
     local search = Instance.new("Frame")
     search.Name = "Ara"
     search.Parent = main
-    search.BackgroundColor3 = Color3.fromRGB(15, 16, 18) -- Oyuk Görünümü İçin Çok Koyu Ton
+    search.BackgroundColor3 = Color3.fromRGB(18, 19, 22) -- Arama Çubuğu Koyu Arka Planı
     search.Position = UDim2.new(0.0256588068, 0, 0.0958904102, 0)
     search.Size = UDim2.new(0, 225, 0, 34)
 
@@ -194,7 +185,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     searchicon.Position = UDim2.new(0.0379999988, -2, 0.138999999, 2)
     searchicon.Size = UDim2.new(0, 24, 0, 21)
     searchicon.Image = "rbxassetid://2804603863"
-    searchicon.ImageColor3 = Color3.fromRGB(130, 135, 145) -- Koyu Temada Görünür Açık Gri Simge
+    searchicon.ImageColor3 = Color3.fromRGB(240, 243, 246)
     searchicon.ScaleType = Enum.ScaleType.Fit
 
     local searchtextbox = Instance.new("TextBox")
@@ -208,8 +199,9 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     searchtextbox.Font = Enum.Font.Gotham
     searchtextbox.LineHeight = 0.870
     searchtextbox.PlaceholderText = "Search"
+    searchtextbox.PlaceholderColor3 = Color3.fromRGB(150, 155, 165)
     searchtextbox.Text = ""
-    searchtextbox.TextColor3 = Color3.fromRGB(200, 204, 210) -- Metin Rengi Kırık Beyaz/Açık Gri
+    searchtextbox.TextColor3 = Color3.fromRGB(255, 255, 255) -- Okunaklı Beyaz Yazı
     searchtextbox.TextSize = 22
     searchtextbox.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -218,7 +210,6 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     end)
 
     -- sidebar
-
     local sidebar = Instance.new("ScrollingFrame")
     sidebar.Name = "sidebar"
     sidebar.Parent = main
@@ -257,7 +248,6 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     end)
     
     -- macos style buttons
-
     local buttons = Instance.new("Frame")
     buttons.Name = "buttons"
     buttons.Parent = main
@@ -276,7 +266,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     local close = Instance.new("TextButton")
     close.Name = "close"
     close.Parent = buttons
-    close.BackgroundColor3 = Color3.fromRGB(254, 94, 86) -- Orijinal Kırmızı Korundu
+    close.BackgroundColor3 = Color3.fromRGB(254, 94, 86)
     close.Size = UDim2.new(0, 16, 0, 16)
     close.AutoButtonColor = false
     close.Font = Enum.Font.SourceSans
@@ -294,7 +284,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     local minimize = Instance.new("TextButton")
     minimize.Name = "minimize"
     minimize.Parent = buttons
-    minimize.BackgroundColor3 = Color3.fromRGB(255, 189, 46) -- Orijinal Sarı Korundu
+    minimize.BackgroundColor3 = Color3.fromRGB(255, 189, 46)
     minimize.Size = UDim2.new(0, 16, 0, 16)
     minimize.AutoButtonColor = false
     minimize.Font = Enum.Font.SourceSans
@@ -309,7 +299,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     local resize = Instance.new("TextButton")
     resize.Name = "resize"
     resize.Parent = buttons
-    resize.BackgroundColor3 = Color3.fromRGB(39, 200, 63) -- Orijinal Yeşil Korundu
+    resize.BackgroundColor3 = Color3.fromRGB(39, 200, 63)
     resize.Size = UDim2.new(0, 16, 0, 16)
     resize.AutoButtonColor = false
     resize.Font = Enum.Font.SourceSans
@@ -322,7 +312,6 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     uc_20.Parent = resize
 
     -- title text at topbar
-
     local title = Instance.new("TextLabel")
     title.Name = "title"
     title.Parent = main
@@ -333,7 +322,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     title.Size = UDim2.new(0, 400, 0, 15)
     title.Font = Enum.Font.Gotham
     title.LineHeight = 1.180
-    title.TextColor3 = Color3.fromRGB(240, 243, 246) -- "ASUMİ HUB" Kırık Beyaz Başlık Metni
+    title.TextColor3 = Color3.fromRGB(255, 255, 255) -- Net Beyaz Başlık
     title.TextSize = 28
     title.TextWrapped = true
     title.TextXAlignment = Enum.TextXAlignment.Left
@@ -343,7 +332,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif.Name = "notif"
     notif.Parent = main
     notif.AnchorPoint = Vector2.new(0.5, 0.5)
-    notif.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- Bildirim Penceresi Koyu Tema Yapıldı
+    notif.BackgroundColor3 = Color3.fromRGB(32, 34, 38)
     notif.Position = UDim2.new(0.5, 0, 0.5, 0)
     notif.Size = UDim2.new(0, 304, 0, 362)
     notif.Visible = false
@@ -362,12 +351,12 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notificon.Size = UDim2.new(0, 100, 0, 100)
     notificon.ZIndex = 3
     notificon.Image = "rbxassetid://4871684504"
-    notificon.ImageColor3 = Color3.fromRGB(200, 204, 210) -- Simgeler Açık Gri Yapıldı
+    notificon.ImageColor3 = Color3.fromRGB(255, 255, 255)
 
     local notifbutton1 = Instance.new("TextButton")
     notifbutton1.Name = "notifbutton1"
     notifbutton1.Parent = notif
-    notifbutton1.BackgroundColor3 = Color3.fromRGB(21, 103, 251) -- Belirttiğin Dijital Mavi Korundu
+    notifbutton1.BackgroundColor3 = Color3.fromRGB(21, 103, 251) -- Dijital Canlı Mavi Buton
     notifbutton1.Position = UDim2.new(0.0559210554, 0, 0.817679524, 0)
     notifbutton1.Size = UDim2.new(0, 270, 0, 50)
     notifbutton1.ZIndex = 3
@@ -414,7 +403,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notiftitle.ZIndex = 3
     notiftitle.Font = Enum.Font.GothamMedium
     notiftitle.Text = "Notice"
-    notiftitle.TextColor3 = Color3.fromRGB(240, 243, 246) -- Koyu Tema İçin Başlık Metni
+    notiftitle.TextColor3 = Color3.fromRGB(255, 255, 255) -- Okunaklı Beyaz
     notiftitle.TextSize = 28
 
     local notiftext = Instance.new("TextLabel")
@@ -426,18 +415,17 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notiftext.Size = UDim2.new(0, 254, 0, 66)
     notiftext.ZIndex = 3
     notiftext.Font = Enum.Font.Gotham
-    notiftext.Text = "We would like to contact you regarding your car's extended warranty."
-    notiftext.TextColor3 = Color3.fromRGB(200, 204, 210) -- Koyu Tema İçin Açıklama Metni
+    notiftext.Text = "Notice text content."
+    notiftext.TextColor3 = Color3.fromRGB(255, 255, 255) -- Okunaklı Beyaz
     notiftext.TextSize = 16
     notiftext.TextWrapped = true
 
     -- notifcation 2 (two button)
-
     local notif2 = Instance.new("Frame")
     notif2.Name = "notif2"
     notif2.Parent = main
     notif2.AnchorPoint = Vector2.new(0.5, 0.5)
-    notif2.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- İkinci Bildirim Paneli Koyu Tema
+    notif2.BackgroundColor3 = Color3.fromRGB(32, 34, 38)
     notif2.Position = UDim2.new(0.5, 0, 0.5, 0)
     notif2.Size = UDim2.new(0, 304, 0, 362)
     notif2.Visible = false
@@ -456,7 +444,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif2icon.Size = UDim2.new(0, 100, 0, 100)
     notif2icon.ZIndex = 3
     notif2icon.Image = "rbxassetid://12608260095"
-    notif2icon.ImageColor3 = Color3.fromRGB(200, 204, 210)
+    notif2icon.ImageColor3 = Color3.fromRGB(255, 255, 255)
 
     local notif2title = Instance.new("TextLabel")
     notif2title.Name = "notif2title"
@@ -468,9 +456,8 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif2title.ZIndex = 3
     notif2title.Font = Enum.Font.GothamMedium
     notif2title.Text = "Notice"
-    notif2title.TextColor3 = Color3.fromRGB(240, 243, 246)
+    notif2title.TextColor3 = Color3.fromRGB(255, 255, 255)
     notif2title.TextSize = 28
-
 
     local notif2text = Instance.new("TextLabel")
     notif2text.Name = "notif2text"
@@ -481,11 +468,10 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif2text.Size = UDim2.new(0, 254, 0, 66)
     notif2text.ZIndex = 3
     notif2text.Font = Enum.Font.Gotham
-    notif2text.Text = "We would like to contact you regarding your car's extended warranty."
-    notif2text.TextColor3 = Color3.fromRGB(200, 204, 210)
+    notif2text.Text = "Notice text content."
+    notif2text.TextColor3 = Color3.fromRGB(255, 255, 255)
     notif2text.TextSize = 16
     notif2text.TextWrapped = true
-
 
     local notif2button1 = Instance.new("TextButton")
     notif2button1.Name = "notif2button1"
@@ -503,7 +489,6 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     uc_15.CornerRadius = UDim.new(0, 9)
     uc_15.Parent = notif2button1
 
-
     local notif2shadow = Instance.new("ImageLabel")
     notif2shadow.Name = "notif2shadow"
     notif2shadow.Parent = notif2
@@ -513,7 +498,6 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif2shadow.Size = UDim2.new(1.20000005, 0, 1.20000005, 0)
     notif2shadow.Image = "rbxassetid://313486536"
     notif2shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
-
 
     local notif2darkness = Instance.new("Frame")
     notif2darkness.Name = "notif2darkness"
@@ -525,11 +509,9 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif2darkness.Size = UDim2.new(0, 721, 0, 584)
     notif2darkness.ZIndex = 2
 
-
     local uc_16 = Instance.new("UICorner")
     uc_16.CornerRadius = UDim.new(0, 18)
     uc_16.Parent = notif2darkness
-
 
     local notif2button2 = Instance.new("TextButton")
     notif2button2.Name = "notif2button2"
@@ -540,10 +522,9 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif2button2.Size = UDim2.new(0, 270, 0, 40)
     notif2button2.ZIndex = 3
     notif2button2.Font = Enum.Font.Gotham
-    notif2button2.Text = "Go away."
-    notif2button2.TextColor3 = Color3.fromRGB(160, 165, 175) -- Silik Metin Grisi
+    notif2button2.Text = "Cancel"
+    notif2button2.TextColor3 = Color3.fromRGB(200, 204, 210)
     notif2button2.TextSize = 21
-
 
     local uc_17 = Instance.new("UICorner")
     uc_17.CornerRadius = UDim.new(0, 9)
@@ -554,7 +535,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     else
         title.Text = ""
     end
-       tp(main, UDim2.new(0.5, 0, 0.5, 0), 1)
+    tp(main, UDim2.new(0.5, 0, 0.5, 0), 1)
     window = {}
 
     function window:ToggleVisible()
@@ -600,7 +581,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         tempnotif.Name = "tempnotif"
         tempnotif.Parent = scrgui
         tempnotif.AnchorPoint = Vector2.new(0.5, 0.5)
-        tempnotif.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- Geçici Bildirim Koyu Tema
+        tempnotif.BackgroundColor3 = Color3.fromRGB(32, 34, 38)
         tempnotif.BackgroundTransparency = 0.150
         tempnotif.Position = UDim2.new(1, -250, 0.0794737339, 0)
         tempnotif.Size = UDim2.new(0, 447, 0, 117)
@@ -621,12 +602,11 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         t2.ZIndex = 4
         t2.Font = Enum.Font.Gotham
         t2.Text = text2
-        t2.TextColor3 = Color3.fromRGB(200, 204, 210)
+        t2.TextColor3 = Color3.fromRGB(255, 255, 255)
         t2.TextSize = 16
         t2.TextWrapped = true
         t2.TextXAlignment = Enum.TextXAlignment.Left
         t2.TextYAlignment = Enum.TextYAlignment.Top
-
 
         local t1 = Instance.new("TextLabel")
         t1.Name = "t1"
@@ -638,10 +618,9 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         t1.ZIndex = 4
         t1.Font = Enum.Font.GothamMedium
         t1.Text = text1
-        t1.TextColor3 = Color3.fromRGB(240, 243, 246)
+        t1.TextColor3 = Color3.fromRGB(255, 255, 255)
         t1.TextSize = 28
         t1.TextXAlignment = Enum.TextXAlignment.Left
-
 
         local ticon = Instance.new("ImageLabel")
         ticon.Name = "ticon"
@@ -652,9 +631,8 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         ticon.Size = UDim2.new(0, 71, 0, 71)
         ticon.ZIndex = 4
         ticon.Image = icon
-        ticon.ImageColor3 = Color3.fromRGB(200, 204, 210)
+        ticon.ImageColor3 = Color3.fromRGB(255, 255, 255)
         ticon.ScaleType = Enum.ScaleType.Fit
-
 
         local tshadow = Instance.new("ImageLabel")
         tshadow.Name = "tshadow"
@@ -722,7 +700,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         sidebardivider.Size = UDim2.new(0, 226, 0, 26)
         sidebardivider.Font = Enum.Font.Gotham
         sidebardivider.Text = name
-        sidebardivider.TextColor3 = Color3.fromRGB(160, 165, 175) -- Ayırıcı Çizgi Metni Grisi
+        sidebardivider.TextColor3 = Color3.fromRGB(255, 255, 255) -- Tam Beyaz Çizgili Ayırıcı Yazısı
         sidebardivider.TextSize = 21
         sidebardivider.TextWrapped = true
         sidebardivider.TextXAlignment = Enum.TextXAlignment.Left
@@ -740,7 +718,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         sidebar2.AutoButtonColor = false
         sidebar2.Font = Enum.Font.Gotham
         sidebar2.Text = name
-        sidebar2.TextColor3 = Color3.fromRGB(200, 204, 210) -- Seçilmemiş Menü Yazısı
+        sidebar2.TextColor3 = Color3.fromRGB(255, 255, 255) -- Sol Menü Butonları Beyaz
         sidebar2.TextSize = 21
         
         local uc_10 = Instance.new("UICorner")
@@ -777,12 +755,13 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
                 v.TextColor3 = Color3.fromRGB(200, 204, 210)
             end
             sidebar2.BackgroundTransparency = 0
-            sidebar2.TextColor3 = Color3.fromRGB(255, 255, 255) -- Seçili Menü Yazısı Beyaz
+            sidebar2.TextColor3 = Color3.fromRGB(255, 255, 255)
             for b, v in next, workareas do
                 v.Visible = false
             end
             workareamain.Visible = true
         end
+
         function sec:Divider(name)
             local section = Instance.new("TextLabel")
             section.Name = "section"
@@ -794,23 +773,24 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
             section.Font = Enum.Font.Gotham
             section.LineHeight = 1.180
             section.Text = name
-            section.TextColor3 = Color3.fromRGB(240, 243, 246) -- Bölüm Başlığı Kırık Beyaz
+            section.TextColor3 = Color3.fromRGB(255, 255, 255) -- Bölüm İçindeki Başlıklar Beyaz
             section.TextSize = 25
             section.TextWrapped = true
             section.TextXAlignment = Enum.TextXAlignment.Left
             section.TextYAlignment = Enum.TextYAlignment.Bottom
         end
+
         function sec:Button(name, callback)
             local button = Instance.new("TextButton")
             button.Name = "button"
             button.Text = name
             button.Parent = workareamain
-            button.BackgroundColor3 = Color3.fromRGB(30, 31, 34) -- Koyu Buton Arka Planı
-            button.BackgroundTransparency = 1
+            button.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- Buton Arka Planı Koyu
+            button.BackgroundTransparency = 0
             button.Size = UDim2.new(0, 418, 0, 37)
             button.ZIndex = 2
             button.Font = Enum.Font.Gotham
-            button.TextColor3 = Color3.fromRGB(21, 103, 251) -- Buton Metni Canlı Mavi
+            button.TextColor3 = Color3.fromRGB(255, 255, 255) -- Okunaklı Beyaz Buton Yazısı
             button.TextSize = 21
 
             local uc_3 = Instance.new("UICorner")
@@ -819,9 +799,8 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
 
             local us = Instance.new("UIStroke", button)
             us.ApplyStrokeMode = "Border"
-            us.Color = Color3.fromRGB(21, 103, 251)
+            us.Color = Color3.fromRGB(21, 103, 251) -- İnce Mavi Çerçeve Çizgisi
             us.Thickness = 1
-
 
             if callback then
                 button.MouseButton1Click:Connect(function() 
@@ -844,7 +823,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
             label.BorderSizePixel = 2
             label.Size = UDim2.new(0, 418, 0, 37)
             label.Font = Enum.Font.Gotham
-            label.TextColor3 = Color3.fromRGB(200, 204, 210) -- Standart Metin Etiketi Açık Gri
+            label.TextColor3 = Color3.fromRGB(255, 255, 255) -- Etiket Yazıları Beyaz
             label.TextSize = 21
             label.TextWrapped = true
             label.Text = name
@@ -861,9 +840,16 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
             toggleswitch.Size = UDim2.new(0, 418, 0, 37)
             toggleswitch.Font = Enum.Font.Gotham
             toggleswitch.Text = name
-            toggleswitch.TextColor3 = Color3.fromRGB(200, 204, 210)
+            toggleswitch.TextColor3 = Color3.fromRGB(255, 255, 255) -- Switch Başlığı Beyaz
             toggleswitch.TextSize = 21
             toggleswitch.TextWrapped = true
             toggleswitch.TextXAlignment = Enum.TextXAlignment.Left
+        end
+        
+        return sec
+    end
+    
+    return window
+end
 
-            -- Kodun devamı (Switch mantığı ve UI elementleri) bu şekilde devam edebilir.
+return lib
