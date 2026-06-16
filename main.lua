@@ -432,7 +432,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notiftext.ZIndex = 3
     notiftext.Font = Enum.Font.Gotham
     notiftext.Text = "We would like to contact you regarding your car's extended warranty."
-    notiftext.TextColor3 = Color3.fromRGB(95, 95, 95)
+    notiftext.TextColor3 = Color3.fromRGB(240, 242, 245)
     notiftext.TextSize = 16
     notiftext.TextWrapped = true
 
@@ -461,7 +461,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif2icon.Size = UDim2.new(0, 100, 0, 100)
     notif2icon.ZIndex = 3
     notif2icon.Image = "rbxassetid://12608260095"
-    notif2icon.ImageColor3 = Color3.fromRGB(95, 95, 95)
+    notif2icon.ImageColor3 = Color3.fromRGB(240, 242, 245)
 
     local notif2title = Instance.new("TextLabel")
     notif2title.Name = "notif2title"
