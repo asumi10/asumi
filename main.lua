@@ -91,7 +91,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         sshadow.ZIndex = 39
         sshadow.Image = "rbxassetid://84753577521793"
         sshadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
-        sshadow.ImageTransparency = 0.400
+        sshadow.ImageTransparency = 1
         sshadow.TileSize = UDim2.new(0, 1, 0, 1)
         splash:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "InOut", "Quart", 1)
         wait(2)
