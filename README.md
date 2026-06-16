@@ -1,2 +1,2 @@
 # asumi
-you lıke the girl.
+Im first script
