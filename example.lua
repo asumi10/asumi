@@ -3,9 +3,9 @@ local library = loadstring(game:HttpGet("https://github.com/asumi10/asumi/blob/m
 
 local window = library:init("Titlebar", true, Enum.KeyCode.RightShift, true)
 
-window:Divider("I'm a divider!")
+window:Divider("Player")
 
-local sectionA = window:Section("Test Elements")
+local sectionA = window:Section("Fly")
 
 sectionA:Divider("I'm another divider!")
 
@@ -23,7 +23,7 @@ sectionA:TextField("Enter text here!", "Enter text here...", function(a)
    print(a)
 end)
 
-window:Divider("Just dividin'")
+window:Divider("ESP")
 
 local sectionB = window:Section("Test Notifications")
 
