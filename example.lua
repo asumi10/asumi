@@ -1,7 +1,7 @@
 local library = loadstring(game:HttpGet("https://github.com/asumi10/asumi/blob/main/main.lua?raw=true"))()
 
 
-local window = library:init("Titlebar", true, Enum.KeyCode.RightShift, true)
+local window = library:init("ASUMİ HUB", true, Enum.KeyCode.RightShift, true)
 
 window:Divider("Player")
 
