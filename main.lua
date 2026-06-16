@@ -67,7 +67,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         sicon.Name = "sicon"
         sicon.Parent = splash
         sicon.AnchorPoint = Vector2.new(0.5, 0.5)
-        sicon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        sicon.BackgroundColor3 = Color3.fromRGB(25, 27, 31)
         sicon.BackgroundTransparency = 1
         sicon.Position = UDim2.new(0.5, 0, 0.5, 0)
         sicon.Size = UDim2.new(0, 191, 0, 190)
