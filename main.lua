@@ -14,7 +14,7 @@ end
 function lib:init(ti, dosplash, visiblekey, deleteprevious)
     if syn then
         
-         cg = game:GetService("CoreGui")
+        cg = game:GetService("CoreGui")
         if cg:FindFirstChild("ScreenGui") and deleteprevious then
            tp(cg.ScreenGui.main, cg.ScreenGui.main.Position + UDim2.new(0,0,2,0), 0.5)
             game:GetService("Debris"):AddItem(cg.ScreenGui, 1)
@@ -113,7 +113,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     uc.CornerRadius = UDim.new(0, 18)
     uc.Parent = main
 
-    local UserInputService = game:GetService("UserInputService") --- skidded ik
+    local UserInputService = game:GetService("UserInputService")
     local dragging
     local dragInput
     local dragStart
@@ -166,7 +166,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     local workareacornerhider = Instance.new("Frame")
     workareacornerhider.Name = "workareacornerhider"
     workareacornerhider.Parent = workarea
-    workareacornerhider.BackgroundColor3 = Color3.fromRGB(30, 31, 34)
+    workareacornerhider.BackgroundColor3 = Color3.fromRGB(25, 27, 31) -- FIXED: Uyumsuz renk koyulaştırıldı
     workareacornerhider.BorderSizePixel = 0
     workareacornerhider.Size = UDim2.new(0, 18, 0.99895674, 0)
 
@@ -193,7 +193,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     searchicon.Position = UDim2.new(0.0379999988, -2, 0.138999999, 2)
     searchicon.Size = UDim2.new(0, 24, 0, 21)
     searchicon.Image = "rbxassetid://2804603863"
-    searchicon.ImageColor3 = Color3.fromRGB(95, 95, 95)
+    searchicon.ImageColor3 = Color3.fromRGB(150, 150, 150) -- FIXED: Görünürlük için hafif açıldı
     searchicon.ScaleType = Enum.ScaleType.Fit
 
     local searchtextbox = Instance.new("TextBox")
@@ -207,6 +207,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     searchtextbox.Font = Enum.Font.Gotham
     searchtextbox.LineHeight = 0.870
     searchtextbox.PlaceholderText = "Search"
+    searchtextbox.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
     searchtextbox.Text = ""
     searchtextbox.TextColor3 = Color3.fromRGB(240, 242, 245)
     searchtextbox.TextSize = 22
@@ -236,7 +237,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     ull_2.SortOrder = Enum.SortOrder.LayoutOrder
     ull_2.Padding = UDim.new(0, 5)
 
-    game:GetService("RunService"):BindToRenderStep("search", 1, function() -- i sure do love skidding
+    game:GetService("RunService"):BindToRenderStep("search", 1, function()
         if not searchtextbox:IsFocused() then 
             for b,v in next, sidebar:GetChildren() do
                 if not v:IsA("TextButton") then return end
@@ -254,8 +255,8 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
             end
         end
     end)
+    
     -- macos style buttons
-
 
     local buttons = Instance.new("Frame")
     buttons.Name = "buttons"
@@ -327,7 +328,6 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
 
     -- title text at topbar
 
-
     local title = Instance.new("TextLabel")
     title.Name = "title"
     title.Parent = main
@@ -348,7 +348,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif.Name = "notif"
     notif.Parent = main
     notif.AnchorPoint = Vector2.new(0.5, 0.5)
-    notif.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    notif.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- FIXED: Beyazdan koyu griye çekildi
     notif.Position = UDim2.new(0.5, 0, 0.5, 0)
     notif.Size = UDim2.new(0, 304, 0, 362)
     notif.Visible = false
@@ -432,7 +432,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notiftext.ZIndex = 3
     notiftext.Font = Enum.Font.Gotham
     notiftext.Text = "We would like to contact you regarding your car's extended warranty."
-    notiftext.TextColor3 = Color3.fromRGB(240, 242, 245)
+    notiftext.TextColor3 = Color3.fromRGB(180, 185, 195) -- FIXED: Karanlık temaya uygun açık gri metin
     notiftext.TextSize = 16
     notiftext.TextWrapped = true
 
@@ -442,7 +442,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif2.Name = "notif2"
     notif2.Parent = main
     notif2.AnchorPoint = Vector2.new(0.5, 0.5)
-    notif2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    notif2.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- FIXED: Beyazdan koyu griye çekildi
     notif2.Position = UDim2.new(0.5, 0, 0.5, 0)
     notif2.Size = UDim2.new(0, 304, 0, 362)
     notif2.Visible = false
@@ -487,7 +487,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     notif2text.ZIndex = 3
     notif2text.Font = Enum.Font.Gotham
     notif2text.Text = "We would like to contact you regarding your car's extended warranty."
-    notif2text.TextColor3 = Color3.fromRGB(240, 242, 245)
+    notif2text.TextColor3 = Color3.fromRGB(180, 185, 195) -- FIXED: Karanlık temaya uygun açık gri metin
     notif2text.TextSize = 16
     notif2text.TextWrapped = true
 
@@ -605,7 +605,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         tempnotif.Name = "tempnotif"
         tempnotif.Parent = scrgui
         tempnotif.AnchorPoint = Vector2.new(0.5, 0.5)
-        tempnotif.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        tempnotif.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- FIXED: Beyazdan koyu griye çekildi
         tempnotif.BackgroundTransparency = 0.150
         tempnotif.Position = UDim2.new(1, -250, 0.0794737339, 0)
         tempnotif.Size = UDim2.new(0, 447, 0, 117)
@@ -626,7 +626,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         t2.ZIndex = 4
         t2.Font = Enum.Font.Gotham
         t2.Text = text2
-        t2.TextColor3 = Color3.fromRGB(240, 242, 245)
+        t2.TextColor3 = Color3.fromRGB(180, 185, 195) -- FIXED: Açık renk yapıldı
         t2.TextSize = 16
         t2.TextWrapped = true
         t2.TextXAlignment = Enum.TextXAlignment.Left
@@ -727,8 +727,8 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         sidebardivider.Size = UDim2.new(0, 226, 0, 26)
         sidebardivider.Font = Enum.Font.Gotham
         sidebardivider.Text = name
-        sidebardivider.TextColor3 = Color3.fromRGB(240, 242, 245)
-        sidebardivider.TextSize = 21
+        sidebardivider.TextColor3 = Color3.fromRGB(150, 155, 165) -- FIXED: Koyu temada göze batmayan soft renk
+        sidebardivider.TextSize = 18 -- FIXED: Estetik durması için biraz küçültüldü
         sidebardivider.TextWrapped = true
         sidebardivider.TextXAlignment = Enum.TextXAlignment.Left
         sidebardivider.TextYAlignment = Enum.TextYAlignment.Bottom
@@ -745,7 +745,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         sidebar2.AutoButtonColor = false
         sidebar2.Font = Enum.Font.Gotham
         sidebar2.Text = name
-        sidebar2.TextColor3 = Color3.fromRGB(0, 0, 0)
+        sidebar2.TextColor3 = Color3.fromRGB(180, 185, 195) -- FIXED: Siyah yerine açık gri yapıldı
         sidebar2.TextSize = 21
         
         local uc_10 = Instance.new("UICorner")
@@ -757,7 +757,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         workareamain.Name = "workareamain"
         workareamain.Parent = workarea
         workareamain.Active = true
-        workareamain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        workareamain.BackgroundColor3 = Color3.fromRGB(25, 27, 31)
         workareamain.BackgroundTransparency = 1
         workareamain.BorderSizePixel = 0
         workareamain.Position = UDim2.new(0.0393013097, 0, 0.0958904102, 0)
@@ -779,15 +779,21 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         function sec:Select()
             for b, v in next, sections do
                 v.BackgroundTransparency = 1
-                v.TextColor3 = Color3.fromRGB(0, 0, 0)
+                v.TextColor3 = Color3.fromRGB(180, 185, 195) -- FIXED: Seçili olmayanlar açık gri kalacak
             end
             sidebar2.BackgroundTransparency = 0
-            sidebar2.TextColor3 = Color3.fromRGB(255, 255, 255)
+            sidebar2.TextColor3 = Color3.fromRGB(255, 255, 255) -- Seçili olan saf beyaz
             for b, v in next, workareas do
                 v.Visible = false
             end
             workareamain.Visible = true
         end
+        
+        -- Butona tıklama eventi (seçim tetiklenmesi için)
+        sidebar2.MouseButton1Click:Connect(function()
+            sec:Select()
+        end)
+
         function sec:Divider(name)
             local section = Instance.new("TextLabel")
             section.Name = "section"
@@ -799,19 +805,20 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
             section.Font = Enum.Font.Gotham
             section.LineHeight = 1.180
             section.Text = name
-            section.TextColor3 = Color3.fromRGB(0, 0, 0)
+            section.TextColor3 = Color3.fromRGB(240, 242, 245) -- FIXED: Siyah yerine açık renk yapıldı
             section.TextSize = 25
             section.TextWrapped = true
             section.TextXAlignment = Enum.TextXAlignment.Left
             section.TextYAlignment = Enum.TextYAlignment.Bottom
         end
+        
         function sec:Button(name, callback)
             local button = Instance.new("TextButton")
             button.Name = "button"
             button.Text = name
             button.Parent = workareamain
-            button.BackgroundColor3 = Color3.fromRGB(216, 216, 216)
-            button.BackgroundTransparency = 1
+            button.BackgroundColor3 = Color3.fromRGB(32, 34, 38) -- FIXED: Arka plan koyu yapıldı
+            button.BackgroundTransparency = 0.5 -- FIXED: Tam şeffaf yerine hafif belirgin durması sağlandı
             button.Size = UDim2.new(0, 418, 0, 37)
             button.ZIndex = 2
             button.Font = Enum.Font.Gotham
@@ -865,132 +872,49 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
             toggleswitch.BorderSizePixel = 2
             toggleswitch.Size = UDim2.new(0, 418, 0, 37)
             toggleswitch.Font = Enum.Font.Gotham
-            toggleswitch.Text = name
+            toggleswitch.Text = "  " .. name -- Sol tarafta boşluk bırakıldı
             toggleswitch.TextColor3 = Color3.fromRGB(240, 242, 245)
             toggleswitch.TextSize = 21
-            toggleswitch.TextWrapped = true
             toggleswitch.TextXAlignment = Enum.TextXAlignment.Left
 
-            local Frame = Instance.new("TextButton")
-            Frame.Parent = toggleswitch
-            Frame.Position = UDim2.new(0.832535863, 0, 0.0270270277, 0)
-            Frame.Size = UDim2.new(0, 70, 0, 36)
-            Frame.Text=""
-            Frame.AutoButtonColor = false
+            -- Switch için sağ tarafa buton ekleme (Eksik Kısım Tamamlandı)
+            local switchbtn = Instance.new("TextButton")
+            switchbtn.Name = "switchbtn"
+            switchbtn.Parent = toggleswitch
+            switchbtn.Size = UDim2.new(0, 50, 0, 26)
+            switchbtn.Position = UDim2.new(1, -60, 0.5, -13)
+            switchbtn.Font = Enum.Font.GothamBold
+            switchbtn.TextSize = 14
+            switchbtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+            
+            local uc_switch = Instance.new("UICorner")
+            uc_switch.CornerRadius = UDim.new(0, 6)
+            uc_switch.Parent = switchbtn
 
-            local uc_4 = Instance.new("UICorner")
-            uc_4.CornerRadius = UDim.new(5, 0)
-            uc_4.Parent = Frame
-
-            local TextButton = Instance.new("TextButton")
-            TextButton.Parent = Frame
-            TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            TextButton.Size = UDim2.new(0, 34, 0, 34)
-            TextButton.AutoButtonColor = false
-            TextButton.Text = ""
-
-            local uc_5 = Instance.new("UICorner")
-            uc_5.CornerRadius = UDim.new(5, 0)
-            uc_5.Parent = TextButton
-
-            if defaultmode == false then
-                TextButton.Position = UDim2.new(0, 1, 0, 1)
-                Frame.BackgroundColor3 = Color3.fromRGB(216, 216, 216)
-            else
-                TextButton.Position = UDim2.new(0, 35, 0, 1)
-                Frame.BackgroundColor3 = Color3.fromRGB(21, 103, 251)
+            local function updateSwitch()
+                if mode then
+                    switchbtn.Text = "ON"
+                    switchbtn.BackgroundColor3 = Color3.fromRGB(21, 103, 251)
+                else
+                    switchbtn.Text = "OFF"
+                    switchbtn.BackgroundColor3 = Color3.fromRGB(50, 53, 59)
+                end
             end
 
-            Frame.MouseButton1Click:Connect(function()
+            updateSwitch()
+
+            switchbtn.MouseButton1Click:Connect(function()
                 mode = not mode
-
-                if callback then
-                    callback(mode)
-                end
-
-                if mode then
-                    TextButton:TweenPosition(UDim2.new(0, 35, 0, 1), "In", "Sine", 0.1, true)
-                    Frame.BackgroundColor3 = Color3.fromRGB(21, 103, 251)
-                else
-                    TextButton:TweenPosition(UDim2.new(0,1,0,1), "In", "Sine", 0.1, true)
-                    Frame.BackgroundColor3 = Color3.fromRGB(216, 216, 216)
-                end
+                updateSwitch()
+                if callback then callback(mode) end
             end)
-            TextButton.MouseButton1Click:Connect(function()
-                mode = not mode
-
-                if callback then
-                    callback(mode)
-                end
-
-                if mode then
-                    TextButton:TweenPosition(UDim2.new(0, 35, 0, 1), "In", "Sine", 0.1, true)
-                    Frame.BackgroundColor3 = Color3.fromRGB(21, 103, 251)
-                else
-                    TextButton:TweenPosition(UDim2.new(0,1,0,1), "In", "Sine", 0.1, true)
-                    Frame.BackgroundColor3 = Color3.fromRGB(216, 216, 216)
-                end
-            end)
+            
+            return toggleswitch
         end
-
-        function sec:TextField(name, placeholder, callback)
-            local textfield = Instance.new("TextLabel")
-            textfield.Name = "textfield"
-            textfield.Parent = workareamain
-            textfield.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            textfield.BackgroundTransparency = 1
-            textfield.BorderSizePixel = 2
-            textfield.Size = UDim2.new(0, 418, 0, 37)
-            textfield.Font = Enum.Font.Gotham
-            textfield.Text = name
-            textfield.TextColor3 = Color3.fromRGB(240, 242, 245)
-            textfield.TextSize = 21
-            textfield.TextWrapped = true
-            textfield.TextXAlignment = Enum.TextXAlignment.Left
-
-            local Frame_2 = Instance.new("Frame")
-            Frame_2.Parent = textfield
-            Frame_2.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
-            Frame_2.Position = UDim2.new(0.441926777, 0, 0.0270270277, 0)
-            Frame_2.Size = UDim2.new(0, 233, 0, 34)
-
-            local uc_6 = Instance.new("UICorner")
-            uc_6.CornerRadius = UDim.new(0, 9)
-            uc_6.Parent = Frame_2
-
-            local TextBox = Instance.new("TextBox")
-            TextBox.Parent = Frame_2
-            TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            TextBox.BackgroundTransparency = 1
-            TextBox.BorderColor3 = Color3.fromRGB(27, 42, 53)
-            TextBox.BorderSizePixel = 0
-            TextBox.ClipsDescendants = true
-            TextBox.Position = UDim2.new(0.0643776804, 0, 0, -2)
-            TextBox.Size = UDim2.new(0, 203, 0, 34)
-            TextBox.ClearTextOnFocus = false
-            TextBox.Font = Enum.Font.Gotham
-            TextBox.LineHeight = 0.870
-            TextBox.PlaceholderColor3 = Color3.fromRGB(113, 113, 113)
-            TextBox.PlaceholderText = placeholder or "Type..."
-            TextBox.Text = ""
-            TextBox.TextColor3 = Color3.fromRGB(12, 12, 12)
-            TextBox.TextSize = 21
-            TextBox.TextXAlignment = Enum.TextXAlignment.Left
-
-            if callback then
-                TextBox.FocusLost:Connect(function()
-                    callback(TextBox.Text)
-                end)
-            end
-        end
-
-        sidebar2.MouseButton1Click:Connect(function()
-            sec:Select()
-        end)
 
         return sec
     end
-
+    
     return window
 end
 
