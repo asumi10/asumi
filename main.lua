@@ -89,7 +89,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
         sshadow.Position = UDim2.new(0.5, 0, 0.5, 0)
         sshadow.Size = UDim2.new(1.20000005, 0, 1.20000005, 0)
         sshadow.ZIndex = 39
-        sshadow.Image = "rbxassetid://313486536"
+        sshadow.Image = "rbxassetid://84753577521793"
         sshadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
         sshadow.ImageTransparency = 0.400
         sshadow.TileSize = UDim2.new(0, 1, 0, 1)
