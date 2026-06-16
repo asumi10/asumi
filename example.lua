@@ -3,43 +3,37 @@ local library = loadstring(game:HttpGet("https://github.com/asumi10/asumi/blob/m
 
 local window = library:init("Titlebar", true, Enum.KeyCode.RightShift, true)
 
-window:Divider("I'm a divider!")
+window:Divider("Player")
 
-local sectionA = window:Section("Test Elements")
+local sectionA = window:Section("Fly")
 
-sectionA:Divider("I'm another divider!")
+sectionA:Divider("Başlık")
 
-sectionA:Button("Click me!", function()
+sectionA:Button("Tıkla bana!", function()
    print("Button clicked.")
 end)
 
-sectionA:Label("Lorem ipsum dolor sit amet.")
-
-sectionA:Switch("Switch me!", false, function(a)
+sectionA:Switch("Fly", false, function(a)
    print(a)
 end)
 
-sectionA:TextField("Enter text here!", "Enter text here...", function(a)
-   print(a)
+window:Divider("Bildirim")
+
+local sectionB = window:Section("Bildirim Testi")
+
+sectionB:Divider("Bildirim Test Butonları")
+
+sectionB:Button("Kayan Hata Bildirimi", function()
+   window:TempNotify("Hata!", "Uyarı Mesajı", "rbxassetid://12608259004")
 end)
 
-window:Divider("Just dividin'")
-
-local sectionB = window:Section("Test Notifications")
-
-sectionB:Divider("Dividers are cool!")
-
-sectionB:Button("Temporary Notification", function()
-   window:TempNotify("Be careful!", "We are going to beat you up.", "rbxassetid://12608259004")
-end)
-
-sectionB:Button("Notification 1", function() window:Notify("Hello!", "I am notification", "Button1", "rbxassetid://12608259004",
+sectionB:Button("Bildirim 1", function() window:Notify("Merhaba!", "Ben Bildirimim", "Buton 1", "rbxassetid://12608259004",
    function()
        print(1)
    end)
 end)
 
-sectionB:Button("Notification 2", function() window:Notify2("Hello!", "I am notification", "Button 1", "Button 2", "rbxassetid://12608259004",
+sectionB:Button("Bildirim 2", function() window:Notify2("Merhaba!", "Ben Bildirimim", "Buton 1", "Buton 2", "rbxassetid://12608259004",
    function()
        print(1)
    end,
